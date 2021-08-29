@@ -22,9 +22,18 @@
         </form>
     </div>
     
-    <?php
+<?php
+//Verificar se clicou no botão
+isset($_POST['nome'])
+{
+    $nome = addslashes($_POST['nome']);
+    $telefone = addslashes($_POST['telefone']);
+    $email = addslashes($_POST['email']);
+    $senha = addslashes($_POST['senha']);
+    $confirmarSenha = addslashes($_POST['confSenha']);
+}
 
-    ?>
+?>
 
 </body>
 

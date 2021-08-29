@@ -42,7 +42,22 @@ Class Usuario
     public function logar($email, $senha)
     {
         global $pdo;
-        
+        //Verificar se o e-mail e senha estão cadastrados, es sim 
+        $sql = $pdo->prepare("SELECT id_usuario FROM usuarios WHERE email = :e AND senha = :s");
+        $sql->bindValue(":e", $email);
+        $sql->bindValue(":s", $senha);
+        if($sql->rowCount() > 0)
+        {
+            //entrar no sistema (sessao)
+            $dado = $sql->fetch();
+            session_start();
+            $_SESSION['id_usuario'] = $dado['id_usuario'];
+            return true;        // Logado com sucesso
+
+        }else {
+            return false;   //Não foi possível logar
+        }
+
     }
 }
 
