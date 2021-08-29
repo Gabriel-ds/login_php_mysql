@@ -12,11 +12,13 @@
 <body>
     <div id="corpo-form">
         <form action="processa.php" method="post">
-            <h1>ENTRAR</h1>
+            <h1>CADASTRO</h1>
+            <input type="text" placeholder="Nome Completo">
+            <input type="text" placeholder="Telefone">
             <input type="e-mail" placeholder="Usuário">
             <input type="password" placeholder="Senha">
-            <input id="btn" type="submit" value="ACESSAR">
-            <a href="cadastro.php">Ainda não é inscrito? <strong>Cadastre-se</strong></a>
+            <input type="password" placeholder="Confirmar Senha">
+            <input id="btn" type="submit" value="CADASTRAR">
         </form>
     </div>
 
