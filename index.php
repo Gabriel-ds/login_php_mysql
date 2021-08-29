@@ -11,14 +11,18 @@
 
 <body>
     <div id="corpo-form">
-        <form action="processa.php" method="post">
+        <form method="post">
             <h1>ENTRAR</h1>
-            <input type="e-mail" placeholder="Usuário">
-            <input type="password" placeholder="Senha">
+            <input type="e-mail" name="email" placeholder="Usuário">
+            <input type="password" name="senha" placeholder="Senha">
             <input id="btn" type="submit" value="ACESSAR">
             <a href="cadastro.php">Ainda não é inscrito? <strong>Cadastre-se</strong></a>
         </form>
     </div>
+
+    <?php
+
+    ?>
 
 </body>
 
