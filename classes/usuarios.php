@@ -32,7 +32,7 @@ Class Usuario
             $sql->bindValue(":n", $nome);
             $sql->bindValue(":t", $telefone);
             $sql->bindValue(":e", $email);
-            $sql->bindValue(":s", $senha);
+            $sql->bindValue(":s", md5($senha));
             $sql->execute();
             return true;
         }
@@ -45,7 +45,7 @@ Class Usuario
         //Verificar se o e-mail e senha estão cadastrados, es sim 
         $sql = $pdo->prepare("SELECT id_usuario FROM usuarios WHERE email = :e AND senha = :s");
         $sql->bindValue(":e", $email);
-        $sql->bindValue(":s", $senha);
+        $sql->bindValue(":s", md5($senha));
         if($sql->rowCount() > 0)
         {
             //entrar no sistema (sessao)

@@ -16,7 +16,7 @@
             <input type="e-mail" name="email" placeholder="Usuário">
             <input type="password" name="senha" placeholder="Senha">
             <input id="btn" type="submit" value="ACESSAR">
-            <a href="cadastro.php">Ainda não é inscrito? <strong>Cadastre-se</strong></a>
+            <a href="cadastrar.php">Ainda não é inscrito? <strong>Cadastre-se</strong></a>
         </form>
     </div>
 
