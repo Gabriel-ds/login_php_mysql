@@ -14,6 +14,23 @@ $u = new Usuario;
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
+<style>
+    #msg-sucesso {
+    width: 420px;
+    margin: 10px auto;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+.msg-erro {
+    width: 420px;
+    margin: 10px auto;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+</style>
 
 <body>
     <div id="corpo-form">
@@ -47,19 +64,42 @@ if(isset($_POST['nome']))
             {
                 if($u->cadastrar($nome,$telefone,$email,$senha))
                 {
-                    echo "Cadastrado com sucesso! Acesse para entrar!";
+                    ?>
+                        <div id="msg-sucesso">
+                            Cadastrado com sucesso! Acesse para entrar!
+                        </div> 
+                    <?php
+
                 } else {
-                    echo "Email já cadastrado!";
+                    ?>
+                        <div class="msg-erro">
+                            Email já cadastrado!
+                        </div> 
+                    <?php
                 }
             } else {
-                echo "Senhas não correspondem";
+                ?>
+                    <div class="msg-erro" style=>
+                        Senhas não correspondem
+                    </div> 
+                <?php
+                
             }
         } else {
-            echo "Erro: ".$u->msgErro;
+            ?>
+            <div class="msg-erro">
+            <?php echo "Erro: ".$u->msgErro; ?>
+            </div> 
+        <?php
+            
         }
 
     } else {
-        echo "Preencha todos os campos!";
+        ?>
+            <div class="msg-erro">
+            Preencha todos os campos!
+            </div> 
+        <?php
     }
 
 }

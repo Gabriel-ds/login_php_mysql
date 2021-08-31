@@ -41,3 +41,13 @@ a:hover {
 #btn {
     width: 440px;
 }
+
+#msg-sucesso {
+    width: 420px;
+    margin: 10px auto;
+}
+
+.msg-erro {
+    width: 420px;
+    margin: 10px auto;
+}
